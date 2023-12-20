@@ -5,6 +5,20 @@
  */
 
 function sleep(milliseconds) {
+    const start = new Date();
+    let difference = 0;
+    return new Promise(function (resolves) {
+        while (true) {
+            const end = new Date();
+            difference = end - start;
+            if (difference == milliseconds) {
+                break;
+            }
+            resolves();
+        }
+    });
 }
+
+module.exports = sleep;
 
 module.exports = sleep;

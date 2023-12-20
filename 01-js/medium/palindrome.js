@@ -4,7 +4,22 @@
 */
 
 function isPalindrome(str) {
+
+  const arr = str.toLowerCase().replace(/\s/g, "").replace(/[^\w\s]|_/g, '').split('');
+  console.log(arr);
+  let i = 0, j = arr.length - 1;
+  console.log(j)
+  while (i <= j) {
+    if (arr[i] !== arr[j]) {
+      return false;
+    }
+    i++; j--;
+  }
+  console.log('yes');
   return true;
 }
+
+
+isPalindrome('A! man a plan a canal Panama');
 
 module.exports = isPalindrome;

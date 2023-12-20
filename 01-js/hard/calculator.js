@@ -15,7 +15,44 @@
 
   Once you've implemented the logic, test your code by running
 */
+class Calculator {
 
-class Calculator {}
+  constructor() {
+    this.result = 0
+  }
+  add(x) {
+    this.result += x;
+    return this;
+  }
+  subtract(x) {
+    this.result -= x;
+    return this;
+  }
+  multiply(x) {
+    this.result *= x;
+    return this;
+  }
+  divide(x) {
+    if (x === 0) {
+      return;
+    }
+    this.result /= x;
+    return this;
+  }
+  clear() {
+    this.result = 0;
+    return this;
+  }
+  getResult() {
+    console.log(`Total amount is ${this.result}`);
+  }
+  calculate(str1) {
+
+  }
+}
+
+const x = new Calculator();
+console.log(x.add(5).getResult());
+
 
 module.exports = Calculator;

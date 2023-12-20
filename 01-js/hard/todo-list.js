@@ -10,8 +10,44 @@
   Once you've implemented the logic, test your code by running
 */
 
-class Todo {
 
+class Todo {
+  constructor() {
+    this.list = [];
+  }
+
+  add(todo) {
+
+    this.list.push(todo);
+
+  }
+
+  remove(index) {
+    if (index >= 0 && index < this.list.length) {
+      this.list.splice(index, 1);
+    }
+  }
+
+  update(index, Todo) {
+    if (index >= 0 && index < this.list.length) {
+      this.list[index] = Todo;
+    }
+  }
+
+  getAll() {
+    return this.list;
+  }
+
+  get(index) {
+    if (index >= 0 && index < this.list.length) {
+      return this.list[index];
+    }
+    return null;
+  }
+
+  clear() {
+    this.list = [];
+  }
 }
 
 module.exports = Todo;
