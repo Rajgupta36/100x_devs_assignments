@@ -1,6 +1,6 @@
 const { Admin, User, Course } = require('../db/index.js');
 const jwt = require('jsonwebtoken');
-const jwtpassword = '9302570431';
+const jwtpassword = '**********';
 async function userMiddleware(req, res, next) {
     const data = req.headers['authorization'];
 

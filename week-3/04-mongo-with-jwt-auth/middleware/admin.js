@@ -1,7 +1,7 @@
 // Middleware for handling auth
 const { Admin, User, Course } = require('../db/index.js');
 const jwt = require('jsonwebtoken');
-const jwtpassword = '9302570431';
+const jwtpassword = '**********';
 async function adminMiddleware(req, res, next) {
     // Implement admin auth logic
     // You need to check the headers and validate the admin from the admin DB. Check readme for the exact headers

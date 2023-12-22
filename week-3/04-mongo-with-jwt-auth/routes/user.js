@@ -3,7 +3,7 @@ const { Router } = require("express");
 const jwt = require('jsonwebtoken');
 const router = Router();
 const userMiddleware = require("../middleware/user");
-const jwtpassword = '9302570431';
+const jwtpassword = '**********';
 
 // User Routes
 router.post('/signup', async (req, res) => {
