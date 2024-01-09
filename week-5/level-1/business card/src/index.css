@@ -1,0 +1,45 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 2;
+    font-weight: 400;
+    background-color: #0b75d7;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    font-weight: 500;
+    color: #222529;
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: #000000;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.5;
+}
+
+button {
+    border-radius: 5px;
+    border: 2px solid wheat;
+    padding: 1rem 2.2rem;
+    margin: 0.1rem 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: inherit;
+    background-color: #2f70e9;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+button:hover {
+    border-color: #050508;
+}
+
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
