@@ -10,7 +10,7 @@ export function Assignment2() {
     // Your code starts here
     const showAlert = useCallback(() => {
         alert(inputText);
-    })
+    }, [inputText])
     // Your code ends here
 
     return (
@@ -26,7 +26,7 @@ export function Assignment2() {
     );
 };
 
-function Alert({ showAlert }) {
+function Alert({showAlert}) {
     return <button onClick={showAlert}>Show Alert</button>
 }
 
