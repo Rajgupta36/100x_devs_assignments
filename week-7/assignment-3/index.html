@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom React</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+
+        const reactElement = {
+            type: 'a',
+            props: {
+                href: 'https://www.example.com',
+                target: '_blank',
+                info: 'Click me!',
+            },
+        };
+        const reactElement2 = {
+            type: 'a',
+            props: {
+                href: 'https://www.example.com',
+                target: '_blank',
+                info: 'Click me!',
+            },
+        };
+
+
+        function generateHTML(element) {
+            if (typeof element === 'string') {
+                return element;
+            }
+
+            const { type, props } = element;
+            const info = props.info;
+            return `<${type} ${Object.keys(props).map(key => `${key}="${props[key]}"`).join(' ')}>${info}</${type}>`;
+        }
+
+
+        function customRender(element, container) {
+            const html = generateHTML(element);
+            //add component to root branch like react
+            // append the generated HTML to the existing content
+            document.getElementById(container).innerHTML += html;
+        }
+        customRender(reactElement, 'root');
+        customRender(reactElement2, 'root');
+    </script>
+</body>
+
+</html>

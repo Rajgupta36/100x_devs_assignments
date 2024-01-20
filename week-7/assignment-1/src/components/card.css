@@ -1,0 +1,79 @@
+#container {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(203, 198, 198, 0.4);
+    border-radius: 12px;
+    color: black;
+    height: 450px;
+    width: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-content {
+    width: 300px;
+    height: 400px;
+    background: #FFC300;
+    border-radius: 12px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+
+}
+
+img {
+    width: 100px;
+    height: 90px;
+    border-radius: 50%;
+    border: 5px solid rgb(255, 255, 255);
+}
+
+#img {
+    height: 35%;
+    background: url(https://source.unsplash.com/closeup-photo-of-brown-grass-7XbxVv9xC_8) no-repeat center center/cover;
+    ;
+    display: flex;
+    justify-content: center;
+    align-items: self-end;
+    border-radius: 12px 12px 0px 0px;
+}
+
+img {
+    position: relative;
+    top: 25%
+}
+
+span {
+    color: #5e5b5c;
+
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.horizontal-line {
+    border: 1px solid #000;
+    width: 100%;
+
+}
+
+#details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.smalldiv {
+    padding: 10px;
+    margin: 10px;
+}
+
+p {
+    padding-top: 0px;
+    margin-top: 5px;
+}
