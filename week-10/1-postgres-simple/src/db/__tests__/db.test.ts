@@ -51,46 +51,26 @@ describe('Todo Operations', () => {
       const title = 'Test Todo';
       const description = 'Test Description';
       const todo = await createTodo(userId, title, description);
-  
-      expect(todo?.id).toBeDefined();
-    expect(todo?.title).toEqual(title);
-    expect(todo?.description).toEqual(description);
-    expect(todo?.done).toEqual(false);
+      expect(todo).toHaveProperty('id');
+      expect(todo?.title).toEqual(title);
+      expect(todo?.description).toEqual(description);
+      expect(todo?.done).toEqual(false);
     });
   
-  test('updateTodo marks a todo as done', async () => {
-    // First, create a todo to update
-    const createdTodo = await createTodo(userId, 'Update Test', 'To be updated');
-
-    // Ensure createdTodo is defined before extracting its id
-    expect(createdTodo).toBeDefined();
-
-    // Extract id using optional chaining
-    const todoId = createdTodo?.id;
-
-    // Ensure todoId is not undefined
-    expect(todoId).toBeDefined();
-
-    if (todoId !== undefined) {
-        const updatedTodo = await updateTodo(todoId);
-
-        // Ensure updatedTodo is defined
-        expect(updatedTodo).toBeDefined();
-
-        // Use optional chaining for safer property access
-        expect(updatedTodo?.done).toEqual(true);
-    } else {
-        // Handle the case where todoId is undefined
-        fail('Failed to create todo for update');
-    }
-});
-
+    test('updateTodo marks a todo as done', async () => {
+      // First, create a todo to update
+      const todo = await createTodo(userId, 'Update Test', 'To be updated');
+   console.log(todo);
+      const updatedTodo = await updateTodo(todo?.id);
+      expect(updatedTodo?.done).toEqual(true);
+    });
   
     test('getTodos retrieves all todos for a user', async () => {
       // Assuming there are already todos created in previous tests
       const todos = await getTodos(userId);
-   expect(todos?.length).toBeGreaterThan(0);
-      todos?.forEach(todo => {
+  console.log(todos);
+      expect(todos.length).toBeGreaterThan(0);
+      todos.forEach(todo => {
         expect(todo).toHaveProperty('id');
         expect(todo.user_id).toEqual(userId);
       });
